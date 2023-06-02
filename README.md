@@ -140,10 +140,13 @@ python scr/count_variant.py result/mapping_variant/variant_cavity.tsv result/Var
 ```
 ### Statistical analysis
 This part was done by R.
+Here is the list of R program used in this project:
+```
+scr/Barchart_of_Threshold.R  #to make a plot showing amino acid distribution of cavities, and adding the threshold.
+scr/Statistics_Analysis.Rmd  #to do statistical test
+scr/GO_Enrichment_Analysis_in_Variant.Rmd #to do GO enrichment analysis
+```
 
-### The amino acid distribution of cavities, and adding the threshold
-This R program `Barchart_of_Threshold.R` is to make a plot showing amino acid distribution of cavities, and adding the threshold.
-###
 
 
 
