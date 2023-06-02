@@ -2,7 +2,13 @@
 ### Abstract
 Cavity is one sort of protein structure features, and it looks like a void inside of protein and it could connect to outside through tunnel or it could be totally closed. This kind of special protein structures make it have significantly biological function, for example binding sites for enzyme or molecule transportation and so on. And, the variants in protein cavities might influent the biological function. The insight of protein cavities and regulation of variants in protein cavities might be still unclear enough. To discover the feature of protein cavities and the feature of variants in cavities, we use experimentally validated amino acid substitution mutation dataset from VariBench as sample and detect protein cavities in mutation-containing protein structures through CICLOP, then discover the feature of protein cavities found by CICLOP. We will also map the variant to protein structures to get variants that locate on the surface of protein cavities, and get insight of these amino acid substitution. This project is a workflow that include couple of programs.    
 ### Pachage and environment
-
+```
+conda   22.9.0
+weblogo 3.7
+python  3.9
+pandas  1.4
+numpy   1.21
+```
 ### Usage
 Firstly, clone this repository in local computer
 ```
