@@ -2,39 +2,32 @@
 ## Abstract
 Cavity is one sort of protein structure features, and it looks like a void inside of protein and it could connect to outside through tunnel or it could be totally closed. This kind of special protein structures make it have significantly biological function, for example binding sites for enzyme or molecule transportation and so on. And, the variants in protein cavities might influent the biological function. The insight of protein cavities and regulation of variants in protein cavities might be still unclear enough. To discover the feature of protein cavities and the feature of variants in cavities, we use experimentally validated amino acid substitution mutation dataset from VariBench as sample and detect protein cavities in mutation-containing protein structures through CICLOP, then discover the feature of protein cavities found by CICLOP. We will also map the variant to protein structures to get variants that locate on the surface of protein cavities, and get insight of these amino acid substitution. This project is a workflow that include couple of programs.    
 ## Usage
+Firstly, clone this repository in local computer
 ```
 mkdir cavity
 cd cavity
-git clone https://github.com/luhuim/find_motif.git
+git clone git@github.com:luhuim/Variant_in_cavity.git
 ```
-## 
-脚本文件
-```
-/home/inf-31-2021/Research_Project/scr
-```
-##
-
-
-
-## Step and Usage
-### 从样本中找出有PDB ID的蛋白质
-（并不是所有uniprot ID 都有pdb ID）
+Then running following command: (command should be run in root directory `cavity/` indefault.)
+### mapped uniprot ID to PDB structure
+One Uniprot ID could be mapped to couple of PDB structures.
 ```
 python scr/parse.py data/uniprot_segments_observed.tsv scr/All_species_train.csv collect_PDB/first_parse.tsv
 ```
-### 只保留有PDB ID的variant信息
+### only keep the proteins that have PDB structure in sample variant dataset.
 ```
 python scr/variant.py data/All_species_train.csv result/collect_PDB/first_parse.tsv result/variant_info/variant.tsv
 ```
-### 一chain一行
+### Organizing PDB information, making the information for same chains merge in one row.
 ```
 python scr/merge_sub-chains.py result/collect_PDB/first_parse.tsv result/PDB_one_chain_one_line/merge_data_1.tsv 
 ```
-### 添加涉及到这些chain的entities
+### removing identitical chains under same protein entity
 ```
 python scr/2022-11-23-Filtering.py result/PDB_one_chain_one_line/merge_data_1.tsv result/PDB_and_entities/merge_data_11_23.tsv
 ```
-### 把CICLOP放到合适的文件夹
+### download `CICLOP` in 
+把CICLOP放到合适的文件夹
 ```
 wget --page-requisites --span-hosts --convert-links --no-directories --directory-prefix=output 'https://ciclop.raylab.iiitd.edu.in/standalone/'
 ```
