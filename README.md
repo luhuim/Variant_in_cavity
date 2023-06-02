@@ -4,10 +4,11 @@ Cavity is one sort of protein structure features, and it looks like a void insid
 ### Pachage and environment
 ```
 conda   22.9.0
-weblogo 3.7
 python  3.9
 pandas  1.4
 numpy   1.21
+bs4     4.11.1   
+beautifulsoup4  4.11.1 
 ```
 ### Usage
 Firstly, clone this repository in local computer
@@ -146,7 +147,7 @@ Amino acids on raw lable means variant amino acid in cavities.
 python scr/count_variant.py result/mapping_variant/variant_cavity.tsv result/Variant_distribution/Variant_Summary.xlsx
 ```
 #### Statistical analysis
-This part was done by R.
+This part was done by R, these program should be run in Windows system
 Here is the list of R program used in this project:
 ```
 scr/Barchart_of_Threshold.R  #to make a plot showing amino acid distribution of cavities, and adding the threshold.
